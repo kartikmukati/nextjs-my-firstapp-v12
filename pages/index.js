@@ -9,7 +9,7 @@ export default function Home(props) {
   return (
   <ul>
     {products.map((product) => (
-      <li key={product.id}><Link href={`/${product.id}`}><h1>{product.title}</h1></Link></li>
+      <li key={product.id}><Link href={`/products/${product.id}`}><h1>{product.title}</h1></Link></li>
     ))}
   </ul>
   )
