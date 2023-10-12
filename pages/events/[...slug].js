@@ -22,29 +22,22 @@ function FilteredEventsPage(props) {
   // const numYear = +filteredYear;
   // const numMonth = +filteredMonth;
 
-  // if (
-  //   isNaN(numYear) ||
-  //   isNaN(numMonth) ||
-  //   numYear > 2030 ||
-  //   numYear < 2021 ||
-  //   numMonth < 1 ||
-  //   numMonth > 12
-  // ) {
-  //   return (
-  //     <Fragment>
-  //       <ErrorAlert>
-  //         <p>Invalid filter. Please adjust your values!</p>
-  //       </ErrorAlert>
-  //       <div className='center'>
-  //         <Button link='/events'>Show All Events</Button>
-  //       </div>
-  //     </Fragment>
-  //   );
-  // }
+  if (props.hasError === true) {
+    return (
+      <Fragment>
+        <ErrorAlert>
+          <p>Invalid filter. Please adjust your values!</p>
+        </ErrorAlert>
+        <div className='center'>
+          <Button link='/events'>Show All Events</Button>
+        </div>
+      </Fragment>
+    );
+  }
 
   const filteredEvents = props.events
 
-  if (props.hasError) {
+  if (!filteredEvents || filteredEvents.lenght === 0) {
     return (
       <Fragment>
         <ErrorAlert>
