@@ -32,7 +32,7 @@ function handler(req, res) {
             {id: 'c2', email: 'Kartik Mukati', text: 'A second comment from backend!'},
         ]
 
-        res.status(200).json({comment: dummyList})
+        res.status(200).json({comments: dummyList})
     }
 
 }
